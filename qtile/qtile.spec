@@ -48,8 +48,6 @@ Requires: libgobject-2.0.so.0%{libsymbolsuffix}
 Requires: libpango-1.0.so.0%{libsymbolsuffix}
 Requires: libpangocairo-1.0.so.0%{libsymbolsuffix}
 
-Requires: python3-libqtile = %{version}-%{release}
-
 Recommends: python3-psutil
 Recommends: python3-pyxdg
 Recommends: python3-dbus-fast

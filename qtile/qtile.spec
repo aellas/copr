@@ -6,7 +6,7 @@ License:        MIT
 URL:            https://github.com/qtile/qtile
 VCS:            git:https://github.com/qtile/qtile.git
 BuildArch:      noarch
-Source0:  %{url}/archive/refs/heads/main.tar.gz
+Source0:        none
 
 # Runtime dependencies
 Requires:       gdk-pixbuf2
@@ -35,6 +35,7 @@ BuildRequires:  xorg-x11-server-Xwayland
 Qtile is a full-featured, pure-Python tiling window manager supporting both X11 and Wayland.
 
 %prep
+%setup -q -T -c %{name} || :
 %autosetup -S git
 
 # Generate a pseudo-version string for informational purposes

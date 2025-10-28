@@ -33,10 +33,11 @@ BuildRequires:  xorg-x11-server-Xwayland
 Qtile is a full-featured, pure-Python tiling window manager supporting both X11 and Wayland.
 
 %prep
-%autosetup -S git -n qtile
+%autosetup -S git
 
 # Generate a pseudo-version string for informational purposes
-git describe --tags --long --abbrev=7 | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//' > .version || echo "git" > .version
+git describe --tags --long --abbrev=7 2>/dev/null | \
+    sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//' > .version || echo "git" > .version
 
 %build
 PYTHONPATH=$PWD python3 libqtile/backend/wayland/cffi/build.py

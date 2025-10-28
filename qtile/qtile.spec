@@ -20,16 +20,15 @@ Requires:       python3-xcffib
 
 # Build dependencies
 BuildRequires:  git
-BuildRequires:  libpulse-devel
+BuildRequires:  pulseaudio-libs-devel
 BuildRequires:  python3-build
 BuildRequires:  python3-installer
-BuildRequires:  python3-setuptools-scm
+BuildRequires:  python3-setuptools_scm
 BuildRequires:  python3-wheel
 BuildRequires:  wlroots-devel
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  xorg-x11-server-Xwayland
-
 %description
 Qtile is a full-featured, pure-Python tiling window manager supporting both X11 and Wayland.
 

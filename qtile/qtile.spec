@@ -6,6 +6,7 @@ License:        MIT
 URL:            https://github.com/qtile/qtile
 VCS:            git:https://github.com/qtile/qtile.git
 BuildArch:      noarch
+Source0:  %{url}/archive/refs/heads/main.tar.gz
 
 # Runtime dependencies
 Requires:       gdk-pixbuf2

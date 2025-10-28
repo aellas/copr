@@ -1,6 +1,6 @@
 Name:           qtile-git
-Version:        0
-Release:        1%{?dist}
+Version:        0.33.0.r282.gc3d4510        
+Release:        1
 Summary:        A full-featured, pure-Python tiling window manager
 License:        MIT
 URL:            https://github.com/qtile/qtile
@@ -29,6 +29,7 @@ BuildRequires:  wlroots-devel
 BuildRequires:  wayland-devel
 BuildRequires:  wayland-protocols-devel
 BuildRequires:  xorg-x11-server-Xwayland
+
 %description
 Qtile is a full-featured, pure-Python tiling window manager supporting both X11 and Wayland.
 

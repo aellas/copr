@@ -40,9 +40,9 @@ popd
 mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}%{_licensedir}/%{name}
 
-install -m 0755 codex-rs/target/release/codex %{buildroot}%{_bindir}/
-install -m 0755 codex-rs/target/release/codex-exec %{buildroot}%{_bindir}/
-install -m 0755 codex-rs/target/release/codex-linux-sandbox %{buildroot}%{_bindir}/
+install -m 0755 %{crate}/target/release/codex %{buildroot}%{_bindir}/
+install -m 0755 %{crate}/target/release/codex-exec %{buildroot}%{_bindir}/
+install -m 0755 %{crate}/target/release/codex-linux-sandbox %{buildroot}%{_bindir}/
 
 install -m 0644 %{crate}/LICENSE %{buildroot}%{_licensedir}/%{name}
 
@@ -53,5 +53,5 @@ install -m 0644 %{crate}/LICENSE %{buildroot}%{_licensedir}/%{name}
 %{_bindir}/codex-linux-sandbox
 
 %changelog
-* Fr Oct 31 2025 LXDE - 0.53.0-1
+* Fri Oct 31 2025 LXDE - 0.53.0-1
 - Initial Fedora packaging.

@@ -13,12 +13,10 @@ Source0:        %{url}/archive/refs/tags/%{rust_tag}%{version}.tar.gz
 Requires:       openssl
 Requires:       gcc-libs
 Requires:       glibc
-
 BuildRequires:  cargo
 BuildRequires:  rust
 BuildRequires:  pkgconfig
 BuildRequires:  make
-
 BuildRequires:  openssl-devel
 BuildRequires:  gcc
 
@@ -28,7 +26,7 @@ Lightweight coding agent that runs in your terminal.
 %prep
 %setup -q -n codex-%{rust_tag}%{version}
 
-cd codex-rs
+pushd %{crate}
 
 %build
 export RUSTUP_TOOLCHAIN=stable
@@ -36,22 +34,24 @@ export CARGO_TARGET_DIR=target
 
 cargo build --release
 
+popd
+
 %install
 mkdir -p %{buildroot}%{_bindir}
-
 mkdir -p %{buildroot}%{_licensedir}/%{name}
 
-install -m 0755 target/release/codex %{buildroot}%{_bindir}/
-install -m 0755 target/release/codex-exec %{buildroot}%{_bindir}/
-install -m 0755 target/release/codex-linux-sandbox %{buildroot}%{_bindir}/
-install -m 0644 LICENSE %{buildroot}%{_licensedir}/%{name}
+install -m 0755 codex-rs/target/release/codex %{buildroot}%{_bindir}/
+install -m 0755 codex-rs/target/release/codex-exec %{buildroot}%{_bindir}/
+install -m 0755 codex-rs/target/release/codex-linux-sandbox %{buildroot}%{_bindir}/
+
+install -m 0644 %{crate}/LICENSE %{buildroot}%{_licensedir}/%{name}
 
 %files
-%license LICENSE
+%license %{_licensedir}/%{name}/LICENSE
 %{_bindir}/codex
 %{_bindir}/codex-exec
 %{_bindir}/codex-linux-sandbox
 
 %changelog
-* %{date} %{user} - 1.2.6-1
+* Fr Oct 31 2025 LXDE - 0.53.0-1
 - Initial Fedora packaging.

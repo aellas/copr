@@ -3,7 +3,7 @@
 %global rust_tag rust-v
 
 Name:           %{pkg_name}
-Version:        0.52.0
+Version:        0.53.0
 Release:        1%{?dist}
 Summary:        Lightweight coding agent that runs in your terminal
 License:        Apache-2.0
@@ -53,5 +53,5 @@ install -m 0644 LICENSE %{buildroot}%{_licensedir}/%{name}
 %{_bindir}/codex-linux-sandbox
 
 %changelog
-* %{version}-1
+* %{date} %{user} - 1.2.6-1
 - Initial Fedora packaging.

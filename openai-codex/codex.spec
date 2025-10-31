@@ -37,7 +37,7 @@ pushd %{crate_dir}
 export RUSTUP_TOOLCHAIN=stable
 export CARGO_TARGET_DIR=target
 
-cargo build --release --frozen
+cargo build --release 
 
 popd
 

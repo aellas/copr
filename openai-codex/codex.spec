@@ -53,5 +53,5 @@ install -m 0644 LICENSE %{buildroot}%{_licensedir}/%{name}
 %{_bindir}/codex-linux-sandbox
 
 %changelog
-* %{date} Christopher Cooper - %{version}-1
-- Initial Fedora packaging based on Arch PKGBUILD.
+* %{version}-1
+- Initial Fedora packaging.

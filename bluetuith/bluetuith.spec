@@ -6,8 +6,7 @@ Release:        1%{?dist}
 Summary:        TUI-based Bluetooth manager
 License:        MIT
 URL:            https://github.com/bluetuith-org/%{crate}
-Source0:        %{url}/archive/refs/tags/v%{version}.tar.gz
-
+Source0:        https://github.com/bluetuith-org/%{crate}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires:  go
 Requires:       bluez
 Requires:       dbus

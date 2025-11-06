@@ -3,10 +3,8 @@ Version:        0.2.5
 Release:        0
 Summary:        A TUI bluetooth manager for Linux
 License:        MIT
-Group:          Hardware/Mobile
 URL:            https://github.com/darkhz/bluetuith
 Source:         %{name}-%{version}.tar.gz
-Source1:        vendor.tar.gz
 BuildRequires:  golang-packaging
 Requires:       bluez
 Requires:       dbus-1

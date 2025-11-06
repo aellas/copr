@@ -12,8 +12,6 @@ BuildRequires:  go
 Requires:       bluez
 Requires:       dbus
 
-BuildArch:      x86_64
-
 %description
 Bluetuith is a terminal user interface (TUI)-based Bluetooth manager written in Go.
 It provides an ncurses-style interface to connect, pair, and manage Bluetooth devices.

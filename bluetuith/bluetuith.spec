@@ -1,11 +1,10 @@
 Name:           bluetuith
-Version:        0.2.5_rc1
-Release:        1%{?dist}
+Version:        0.2.5
+Release:        rc1
 Summary:        A TUI bluetooth manager for Linux
 License:        MIT
 URL:            https://github.com/bluetuith-org/bluetuith
 Source0:        https://github.com/bluetuith-org/bluetuith/releases/download/v0.2.5-rc1/bluetuith_0.2.5-rc1_Linux_x86_64.tar.gz
-BuildArch:      x86_64
 Requires:       bluez
 Requires:       dbus
 

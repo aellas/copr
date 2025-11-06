@@ -1,39 +1,32 @@
-%global crate bluetuith
-
-Name:           %{crate}
-Version:        0.2.5_rc1
-Release:        1%{?dist}
-Summary:        TUI-based Bluetooth manager
+Name:           bluetuith
+Version:        0.2.5-rc1
+Release:        0
+Summary:        A TUI bluetooth manager for Linux
 License:        MIT
-URL:            https://github.com/bluetuith-org/%{crate}
-Source0:        https://github.com/bluetuith-org/%{crate}/archive/refs/tags/v%{version}.tar.gz
-BuildRequires:  go
+Group:          Hardware/Mobile
+URL:            https://github.com/darkhz/bluetuith
+Source:         %{name}-%{version}.tar.gz
+Source1:        vendor.tar.gz
+BuildRequires:  golang-packaging
 Requires:       bluez
-Requires:       dbus
+Requires:       dbus-1
 
 %description
-Bluetuith is a terminal user interface (TUI)-based Bluetooth manager written in Go.
-It provides an ncurses-style interface to connect, pair, and manage Bluetooth devices.
+bluetuith is a TUI-based bluetooth connection manager, which can interact with bluetooth adapters and devices. It aims to be a replacement to most bluetooth managers, like blueman.
+This project is currently in the alpha stage.
 
 %prep
-%autosetup -n %{crate}-%{version}
+%setup -q -a 1
 
 %build
-go build -v \
-   -ldflags="-s -w -X github.com/darkhz/bluetuith/cmd.Version=v%{version}" \
-   -o %{crate} ./cmd
+go build \
+   -mod=vendor \
+   -buildmode=pie
 
 %install
-install -Dm755 %{crate} %{buildroot}%{_bindir}/%{crate}
-
-%check
-%{buildroot}%{_bindir}/%{crate} --version || true
+install -D -m0755 %{name} %{buildroot}%{_bindir}/%{name}
 
 %files
-%license LICENSE
-%doc README.md
-%{_bindir}/%{crate}
+%{_bindir}/%{name}
 
 %changelog
-* Thu Nov 06 2025 Your Name <you@example.com> - 0.2.5_rc1-1
-- Initial Fedora packaging (built from Go source)

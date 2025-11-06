@@ -26,5 +26,5 @@ install -Dm644 %{crate}-%{version}/LICENSE %{buildroot}%{_licensedir}/bluetuith/
 %license %{_licensedir}/bluetuith/LICENSE
 
 %changelog
-* Thu Nov 06 2025 lxdes zacpi@pm.me - 0.2.5-1
+* Thu Nov 06 2025 - 0.2.5-1
 - Initial COPR packaging from binary release

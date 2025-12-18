@@ -59,3 +59,5 @@ install -m 0644 src/extra/jellyfin-tui.desktop \
 %changelog
 * %{date} %{user} - 1.2.6-1
 - Initial Fedora packaging.
+* %{date} %{user} -  1.3.0-1
+- https://github.com/dhonus/jellyfin-tui/releases/tag/v1.3.0

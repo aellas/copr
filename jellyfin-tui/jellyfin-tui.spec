@@ -1,7 +1,7 @@
 %global crate jellyfin-tui
 
 Name:           %{crate}
-Version:        1.2.6
+Version:        1.3.0
 Release:        1%{?dist}
 Summary:        Music streaming TUI client for Jellyfin
 
